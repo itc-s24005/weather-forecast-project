@@ -5,12 +5,16 @@ import { useState } from "react";
 export default function Page() {
   const [city, setCity] = useState("");
   const [weather, setWeather] = useState("");
+  const [temp_max, settemp_max] = useState("");
+  const [temp_min, settemp_min] = useState("");
 
   async function getWeather() {
     const res = await fetch(`/api/weather?city=${city}`);
     const data = await res.json();
     setCity(data.weather.name);
     setWeather(data.weather.weather[0].main);
+    settemp_max(data.weather.main.temp_max);
+    settemp_min(data.weather.main.temp_min);
   }
 
   return (
@@ -27,8 +31,13 @@ export default function Page() {
       <button className="bg-gray-200 p-2" onClick={getWeather}>
         検索
       </button>
-      <h1>指定地: {city}</h1>
-      <p className="tenki">現在の天気: {weather}</p>
+
+      <div className="main">
+        <p className="basyo">{city}の天気</p>
+        <p className="tenki">{weather}</p>
+        <p className="max">{temp_max}℃</p>
+        <p className="min">{temp_min}℃</p>
+      </div>
     </div>
   );
 }
