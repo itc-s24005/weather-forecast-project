@@ -1,33 +1,85 @@
-input {
-  height: 21px;
+body {
+  background-image: url("/sora.jpg");
+  background-size: cover;
 }
 
-.bg-gray-200 {
-  padding: 3px 9px;
+input {
+  height: 21px;
+  padding: 2px;
+  border-radius: 6px;
+  border: none;
+  background-color: #87cefa;
 }
 
 .main {
-  margin: 15px 55px;
-  background-color: #f5f5f5;
+  top: 0;
+  z-index: 1;
+  padding: 13px;
+  font-family: "Yu Gothic";
+  color: #fff;
+}
+
+.otenki {
+  padding: 0 135px;
+}
+
+.bg-gray-200 {
+  border-radius: 8px;
+  padding: 3.5px 9px;
+  background-color: #00bfff;
+  border: none;
+}
+
+.content {
+  margin: 55px auto;
+  padding-top: 10px;
+  width: 100%;
+  background-color: rgb(0 0 0 / 0.2);
+  border-radius: 20px;
+}
+
+.time {
+  text-align: center;
+  font-size: 30px;
 }
 
 .basyo {
-  font-size: 34px;
+  font-size: 55px;
   text-align: center;
+  margin-top: 12px;
 }
 .tenki {
-  font-size: 30px;
+  font-size: 33px;
   text-align: center;
+  margin: 18px 0;
+}
+.onndo {
+  font-size: 56px;
+  text-align: center;
+  margin: 17px 0;
+}
+
+.kion {
+  text-align: center;
+  font-size: 26px;
+  padding: 5px 650px 7px;
 }
 
 .max {
-  font-size: 22px;
-  color: red;
-  text-align: center;
+  color: #ff4c4c;
+  margin: 0;
+  float: left;
 }
 
 .min {
-  font-size: 22px;
-  color: blue;
+  color: #4c4cff;
+  margin: 0;
+  float: right;
+}
+
+.sonota {
+  clear: left;
   text-align: center;
+  font-size: 26px;
+  padding: 7px;
 }
