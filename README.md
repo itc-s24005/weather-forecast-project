@@ -1,6 +1,6 @@
 # 天気予報アプリ
 ## 概要
-検索した地域の天気情報を表示してくれます  
+検索した地域の天気情報を表示するサイトです  
 学校の先生の力もお借りして仕上げました
 ## 使用技術
 * Next.js（App Router)
@@ -8,9 +8,10 @@
 * Tailwind CSS
 * React
 ## 使用API
-[OpenWeatherMap API](https://openweathermap.org/api)
+[OpenWeatherMap API](https://openweathermap.org/api)  
+指定された地域の天気情報を取得
 ## 製作期間
-20日間ほど
+20日ほど
 ## 内容(スクリーンショット)
 ![](https://github.com/itc-s24005/weather-forecast-project/blob/main/ScreenShot/Screenshot%20from%202025-11-07%2010-22-20.png?raw=true)
 ※現在APIが切れてるため情報の取得はできません
