@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Page() {
   const [city, setCity] = useState("");
@@ -10,6 +10,7 @@ export default function Page() {
   const [temp_min, settemp_min] = useState("");
   const [speed, setspeed] = useState("");
   const [humidity, sethumidity] = useState("");
+  const [timeText, setTimeText] = useState("");
 
   async function getWeather() {
     const res = await fetch(`/api/weather?city=${city}`);
@@ -23,15 +24,16 @@ export default function Page() {
     sethumidity(data.weather.main.humidity);
   }
 
-  var time_el = document.getElementById("time_el");
+  // ← クライアント側だけで実行されるので document 不要
+  useEffect(() => {
+    const date = new Date();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    const hour = date.getHours();
+    const min = date.getMinutes();
 
-  var date = new Date();
-
-  var month = date.getMonth() + 1;
-  var day = date.getDate();
-  var hour = date.getHours();
-  var min = date.getMinutes();
-  time_el = month + "月" + day + "日" + hour + ":" + min;
+    setTimeText(`${month}月${day}日 ${hour}:${min}`);
+  }, []);
 
   return (
     <div className="main">
@@ -49,7 +51,7 @@ export default function Page() {
       </button>
       <div className="otenki">
         <div className="content">
-          <p className="time">{time_el}</p>
+          <p className="time">{timeText}</p>
           <p className="basyo">{city}</p>
           <p className="tenki">{weather}</p>
           <p className="onndo">{temp} ℃</p>
